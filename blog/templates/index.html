@@ -1,10 +1,12 @@
-{% load bootstrap3 %}
-{% bootstrap_css %}
-{% bootstrap_javascript %}
-<h2>i am in the index templates</h2>
-{% for post in poster %}
-    <div>
-        <h3><a href="/post/{{ post.slug }}">{{ post.title }}</a></h3>
-        <p>{{ post.summery }}</p>
-    </div>
-{% endfor %}
+{% extends 'base.html' %}
+
+    {% block content %}
+        <h2>i am in the index templates</h2>
+        {% for post in poster %}
+            <div>
+                <h3><a href="/post/{{ post.slug }}">{{ post.title }}</a></h3>
+                <p>{{ post.summery }}</p>
+            </div>
+        {% endfor %}
+    {% endblock %}
+

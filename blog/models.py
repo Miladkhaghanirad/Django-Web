@@ -13,6 +13,7 @@ class Post(models.Model):
     content = models.TextField()
     publish = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
+   
 
     class Meta:
         ordering = ['-created']
