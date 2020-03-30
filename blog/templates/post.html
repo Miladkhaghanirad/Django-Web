@@ -1,12 +1,11 @@
-{% extends 'base.html' %}
+{% extends 'single-template.html' %}
 {% block title %}My Site: {{ post.title }}{% endblock %}
 
- {% block content %}
-        <a href="/">back to home page</a><br /><br />
+ {% block entry %}
 
         <h2>{{ post.title }}</h2>
 
         <div>
-            {{ post.content }}
+            {{ post.content | linebreaks }}
         </div>
 {% endblock %}

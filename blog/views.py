@@ -7,14 +7,16 @@ from .models import Post
 
 # Create your views here.
 def index(request):
-    poster = Post.objects.all()
-    return render(request, 'index.html', {'poster': poster})
+    posts = Post.objects.all()
+    return render(request, 'index.html', {'posts': posts})
 
 
 def post(request, slug):
     print(slug)
+    posts = Post.objects.all()
     return render(request, 'post.html', {
-        'post': get_object_or_404(Post, slug=slug)
+        'post': get_object_or_404(Post, slug=slug),
+        'posts': posts
     })
 
 
